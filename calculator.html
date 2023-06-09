@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+	<style type="text/css">
+		body{
+			height: 100vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.container{
+			width: 500px;
+			height: 350px;
+			background: rgba(195, 109, 99, 1.0);
+			border-radius: 30px;
+			box-shadow: 1px 1px 40px 0 ;
+			position: relative;
+		}
+
+		label{
+			display: block;
+		}
+
+		.result{
+			margin-top: -270px;
+			margin-left: 160px;
+		}
+
+		#result{
+			width: 180px;
+			height: 20px;
+			border-radius: 10px;
+		}
+
+
+		.res,#firstnumber:focus{
+			outline: none;
+
+
+		}
+
+		.resl{
+			margin-left: 25px;
+			letter-spacing: 1px;
+			color: #000;
+			transition: all .5s;
+		}
+
+		.resl:hover{
+			color:#fff;
+		}
+
+		.fi{
+			margin-top: 180px;
+			margin-left: 40px;
+		}
+
+		.fil{
+			margin-left: 3px;
+			letter-spacing: 1px;
+			color: black;
+
+		}
+
+		.fil:hover{
+			color: white;
+		}
+
+		#firstnumber{
+			width: 170px;
+			height: 20px;
+			border-radius: 10px;
+		}
+
+		.si{
+			margin-top: -45px;
+			margin-left: 270px;
+		}
+
+		.sil{
+			margin-left: 5px;
+			letter-spacing: 1px;
+			color: #000;
+			transition: all .5s;
+		}
+
+		.sil:hover{
+			color: white;
+		}
+
+		#lastnumber{
+			width: 180px;
+			height: 20px;
+			border-radius: 10px;
+		}
+
+		.sign{
+			margin-left: 180px;
+		}
+
+		#add,#sub,#multi,#dev,#mod{
+			width: 20px;
+			margin-right: 5px;
+			background: gray;
+			border: none;
+			text-align: center;
+			padding: 3px;
+			margin-top: 45px;
+		}
+
+		#add:hover,#sub:hover,#multi:hover,#dev:hover,#mod:hover{
+			background: black;
+			color: white;
+		}
+
+		#cal{
+			margin-left: 210px;
+			margin-top: 30px;
+			width: 100px;
+			border-radius: 10px;
+			border: none;
+			padding: 3px;
+		}
+
+		.tem{
+			width: 50px;
+			border-radius: 10px;
+			position: absolute;
+			top: 70%;
+			left: 42%;
+			text-align: center;
+			font-size: 13px;
+			font-weight: bold;
+
+
+		}
+
+
+
+
+
+
+
+	</style>
+</head>
+<body>
+
+	<div class="container">
+		<form action="" method=""> 
+
+			<div class="fi">
+				<label for="firstnumber" class="fil">Enter Your First Number</label>
+				<input type="text" name="firstnumber" id="firstnumber" class="">
+				
+			</div>
+
+			<div class="si">
+				<label for="lestnumber" class="sil">Enter Your Last Number</label>
+				<input type="text" name="lastnumber" id="lastnumber" class="">
+				
+			</div>
+
+			<div class="sign">
+				<button type="button" id="add" class="" onclick="sign('+')">+</button>
+				<button type="button" id="sub" class="" onclick="sign('-')">-</button>
+				<button type="button" id="multi" class="" onclick="sign('*')">*</button>
+				<button type="button" id="dev" class="" onclick="sign('/')">/</button>
+				<button type="button" id="mod" class="" onclick="sign('%')">%</button>
+				
+			</div>
+
+			<div>
+				<button type="button" id="cal" onclick="calculate()">Calculate</button>
+			</div>
+
+			<input type="text" name="tempsign" id="tempsign" class="tem">
+			<div class="result">
+				<label class="resl">Here is your result!</label>
+				<input type="text" name="result" id="result" class="res">
+				
+			</div>
+			
+		</form>
+		
+	</div>
+
+
+	<script type="text/javascript">
+
+		function sign(sign){
+			// console.log("hola");
+
+			document.getElementById("tempsign").value = sign;
+
+
+		}
+
+		function calculate(){
+			let num1 = Number(document.getElementById("firstnumber").value); 
+			let num2 = Number(document.getElementById("lastnumber").value);
+			let getsign= document.getElementById('tempsign').value;
+
+			let cal;
+
+			switch(getsign){
+				case '+':
+				cal= num1+num2;
+				break;
+
+				case '-':
+				cal= num1-num2;
+				break;
+
+				case '*':
+				cal= num1*num2;
+				break;
+
+				case '/':
+				cal= num1/num2;
+				break;
+
+				case '%':
+				cal= num1%num2;
+				break;
+				default:
+				window.alert("Chossen Sign");
+																
+
+			}
+
+
+			document.getElementById('result').value=cal;
+			
+		}
+
+		calculate();
+		
+	</script>
+
+</body>
+</html>
