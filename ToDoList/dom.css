@@ -1,0 +1,102 @@
+*{
+	box-sizing: border-box;
+}
+
+body{
+	background: #f3f3f3;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.container{
+	width: 400px;
+	background: #fff;
+	box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.4) ;
+	border-radius: 10px;
+}
+
+
+.container .card{
+	padding: 30px 40px;
+
+}
+
+.card h3, .card h4{
+	text-align: center;
+	letter-spacing: 2px;
+}
+
+.form-control{
+	margin-bottom: 20px;
+}
+
+.form-control label{
+	display: block;
+	color: #777;
+	margin-bottom: 5px;
+}
+
+.form-control input{
+	width: 100%;
+	padding: 10px;
+	border: none;
+	border-bottom: 1px solid steelblue ;
+}
+
+.form-control input:focus{
+	outline: none;
+	border-bottom: 1px solid silver;
+
+}
+
+.form .btn{
+	width: 100%;
+	background: steelblue;
+	color: #fff;
+	font-size: 16px;
+	padding: 10px 0;
+	border-radius: 50px;
+	border: none;
+	cursor: pointer;
+}
+
+.card .card-action{
+	border-top: 1px dashed silver;
+	border-bottom: 1px dashed silver;
+	margin: 20px;
+	padding-bottom: 10px;
+}
+
+.list-group{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.list-group .list-group-item{
+	display: flex;
+	justify-content: space-between;
+	line-height: 30px;
+}
+
+.delete-item{
+	color: red;
+}
+
+.clear-tasks{
+	text-decoration: none;
+	background: red;
+	color:  white;
+	border: none;
+	padding: 5px 5px;
+	cursor: pointer;
+	margin-bottom: 10px;
+	border-radius: 3px;
+
+}
+
+.moretasks{
+	text-align: center;
+}	
